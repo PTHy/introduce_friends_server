@@ -17,7 +17,7 @@ import java.security.MessageDigest;
 public class User {
     @Id
     @Column(nullable = false)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     @NotEmpty

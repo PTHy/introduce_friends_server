@@ -1,7 +1,7 @@
 package kr.hs.dgsw.introduce_friends_server.Repository;
 
-import org.springframework.stereotype.Repository;
+import kr.hs.dgsw.introduce_friends_server.Domain.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface PostRepository {
+public interface PostRepository extends JpaRepository<Post, Long> {
 }
