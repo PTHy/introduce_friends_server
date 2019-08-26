@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface UserService {
     List<User> getAllUsers();
-    User register();
+    User register(User user);
     User getUser(Long id);
-    User login();
-    User modifyUser();
-    boolean deleteUser();
+    User login(User user);
+    User modifyUser(User user, Long id);
+    boolean deleteUser(Long id);
 }

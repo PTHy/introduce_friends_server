@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User register() {
+    public User register(User user) {
         return null;
     }
 
@@ -23,17 +23,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User login() {
+    public User login(User user) {
         return null;
     }
 
     @Override
-    public User modifyUser() {
+    public User modifyUser(User user, Long id) {
         return null;
     }
 
     @Override
-    public boolean deleteUser() {
+    public boolean deleteUser(Long id) {
         return false;
     }
 }
