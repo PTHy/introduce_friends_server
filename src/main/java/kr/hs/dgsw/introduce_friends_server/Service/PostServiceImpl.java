@@ -17,4 +17,24 @@ public class PostServiceImpl implements PostService{
     public List<Post> getAllPosts() {
         return postRepository.findAll();
     }
+
+    @Override
+    public Post getPost(Long id) {
+        return null;
+    }
+
+    @Override
+    public Post createPost() {
+        return null;
+    }
+
+    @Override
+    public Post modifyPost() {
+        return null;
+    }
+
+    @Override
+    public boolean deletePost() {
+        return false;
+    }
 }

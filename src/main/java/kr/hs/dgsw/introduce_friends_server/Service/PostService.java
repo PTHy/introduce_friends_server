@@ -5,8 +5,10 @@ import kr.hs.dgsw.introduce_friends_server.Domain.Post;
 import java.util.List;
 
 public interface PostService {
-    public List<Post> getAllPosts();
-    public Post createPost();
-    public Post modifyPost();
-    public boolean deletePost();
+    List<Post> getAllPosts();
+    Post getPost(Long id);
+    Post createPost();
+    Post modifyPost();
+    boolean deletePost();
+
 }

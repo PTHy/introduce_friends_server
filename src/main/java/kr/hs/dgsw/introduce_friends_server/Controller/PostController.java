@@ -25,6 +25,18 @@ public class PostController {
         }
     }
 
+    @PostMapping("/api/post/{id}")
+    public ResponseEntity getPost(@PathVariable Long id) {
+        try {
+            return ResponseEntity
+                    .ok(new ResponseFormat(ResponseType.GET_POST_SUCCESS, this.postService.getPost(id)));
+        } catch (Exception ex) {
+            return ResponseEntity
+                    .status(500)
+                    .body(new ResponseFormat(ResponseType.FAIL, ex.getMessage()));
+        }
+    }
+
     @PostMapping("/api/posts")
     public ResponseEntity createPost() {
         try {
