@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface PostService {
     List<Post> getAllPosts();
+    List<Post> getPostsByUserId(Long id);
     Post getPost(Long id);
     Post createPost();
     Post modifyPost();

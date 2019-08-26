@@ -5,9 +5,10 @@ public enum ResponseType {
 
     GET_POSTS_SUCCESS(100, "글 리스트 조회에 성공하였습니다"),
     GET_POST_SUCCESS(101, "글 상세조회에 성공하였습니다"),
-    CREATE_POST_SUCCESS(101, "글 생성에 성공하였습니다"),
-    MODIFY_POST_SUCCESS(102, "글 수정에 성공하였습니다"),
-    DELETE_POST_SUCCESS(103, "글 삭제에 성공하였습니다"),
+    GET_POSTS_BY_USER_SUCCESS(102, "특정 유저 글 조회에 성공하였습니다"),
+    CREATE_POST_SUCCESS(103, "글 생성에 성공하였습니다"),
+    MODIFY_POST_SUCCESS(104, "글 수정에 성공하였습니다"),
+    DELETE_POST_SUCCESS(105, "글 삭제에 성공하였습니다"),
 
     GET_USERS_SUCCESS(200, "유저 리스트 조회에 성공하였습니다"),
     GET_USER_SUCCESS(201, "유저 상세 조회에 성공하였습니다"),
