@@ -1,7 +1,10 @@
 package kr.hs.dgsw.introduce_friends_server.Domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +14,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -51,4 +55,14 @@ public class User {
             logger.warn(ex.getMessage());
         }
     }
+
+    @CreationTimestamp
+    @Column(updatable = false, nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    LocalDateTime created;
+
+    @UpdateTimestamp
+    @Column(updatable = false, nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    LocalDateTime modified;
 }
