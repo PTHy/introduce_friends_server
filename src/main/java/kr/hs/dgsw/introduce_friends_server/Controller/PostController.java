@@ -1,5 +1,6 @@
 package kr.hs.dgsw.introduce_friends_server.Controller;
 
+import kr.hs.dgsw.introduce_friends_server.Domain.Post;
 import kr.hs.dgsw.introduce_friends_server.Protocol.ResponseFormat;
 import kr.hs.dgsw.introduce_friends_server.Protocol.ResponseType;
 import kr.hs.dgsw.introduce_friends_server.Service.PostService;
@@ -50,10 +51,10 @@ public class PostController {
     }
 
     @PostMapping("/api/posts")
-    public ResponseEntity createPost() {
+    public ResponseEntity createPost(@RequestBody Post post) {
         try {
             return ResponseEntity
-                    .ok(new ResponseFormat(ResponseType.CREATE_POST_SUCCESS, this.postService.createPost()));
+                    .ok(new ResponseFormat(ResponseType.CREATE_POST_SUCCESS, this.postService.createPost(post)));
         } catch (Exception ex) {
             return ResponseEntity
                     .status(500)
@@ -61,11 +62,11 @@ public class PostController {
         }
     }
 
-    @PutMapping("/api/posts")
-    public ResponseEntity modifyPost() {
+    @PutMapping("/api/posts/{id}")
+    public ResponseEntity modifyPost(@RequestBody Post post, @PathVariable Long id) {
         try {
             return ResponseEntity
-                    .ok(new ResponseFormat(ResponseType.MODIFY_POST_SUCCESS, this.postService.modifyPost()));
+                    .ok(new ResponseFormat(ResponseType.MODIFY_POST_SUCCESS, this.postService.modifyPost(post, id)));
         } catch (Exception ex) {
             return ResponseEntity
                     .status(500)
@@ -73,11 +74,11 @@ public class PostController {
         }
     }
 
-    @DeleteMapping("/api/posts")
-    public ResponseEntity deletePost() {
+    @DeleteMapping("/api/posts/{id}")
+    public ResponseEntity deletePost(@PathVariable Long id) {
         try {
             return ResponseEntity
-                    .ok(new ResponseFormat(ResponseType.DELETE_POST_SUCCESS, this.postService.deletePost()));
+                    .ok(new ResponseFormat(ResponseType.DELETE_POST_SUCCESS, this.postService.deletePost(id)));
         } catch (Exception ex) {
             return ResponseEntity
                     .status(500)

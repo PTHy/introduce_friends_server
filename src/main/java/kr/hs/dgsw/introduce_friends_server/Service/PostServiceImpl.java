@@ -24,17 +24,17 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post createPost() {
+    public Post createPost(Post post) {
         return null;
     }
 
     @Override
-    public Post modifyPost() {
+    public Post modifyPost(Post post, Long id) {
         return null;
     }
 
     @Override
-    public boolean deletePost() {
+    public boolean deletePost(Long id) {
         return false;
     }
 }
