@@ -5,10 +5,7 @@ import kr.hs.dgsw.introduce_friends_server.Protocol.ResponseType;
 import kr.hs.dgsw.introduce_friends_server.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -57,6 +54,30 @@ public class UserController {
         try {
             return ResponseEntity
                     .ok(new ResponseFormat(ResponseType.LOGIN_USER_SUCCESS, this.userService.login()));
+        } catch (Exception ex) {
+            return ResponseEntity
+                    .status(500)
+                    .body(new ResponseFormat(ResponseType.FAIL, ex.getMessage()));
+        }
+    }
+
+    @PutMapping("/api/users")
+    public ResponseEntity modifyUser() {
+        try {
+            return ResponseEntity
+                    .ok(new ResponseFormat(ResponseType.MODIFY_USER_SUCCESS, this.userService.modifyUser()));
+        } catch (Exception ex) {
+            return ResponseEntity
+                    .status(500)
+                    .body(new ResponseFormat(ResponseType.FAIL, ex.getMessage()));
+        }
+    }
+
+    @DeleteMapping("/api/users")
+    public ResponseEntity deleteUser() {
+        try {
+            return ResponseEntity
+                    .ok(new ResponseFormat(ResponseType.DELETE_USER_SUCCESS, this.userService.deleteUser()));
         } catch (Exception ex) {
             return ResponseEntity
                     .status(500)
