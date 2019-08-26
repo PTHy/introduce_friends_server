@@ -37,7 +37,7 @@ public class PostController {
         }
     }
 
-    @PostMapping("/api/users/{id}/posts")
+    @GetMapping("/api/users/{id}/posts")
     public ResponseEntity getPostsByUserId(@PathVariable Long id) {
         try {
             return ResponseEntity
