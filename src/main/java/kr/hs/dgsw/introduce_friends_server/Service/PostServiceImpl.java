@@ -19,6 +19,11 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
+    public List<Post> getPostsByUserId(Long id) {
+        return null;
+    }
+
+    @Override
     public Post getPost(Long id) {
         return null;
     }
