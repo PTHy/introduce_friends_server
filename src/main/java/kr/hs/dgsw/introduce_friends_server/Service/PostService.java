@@ -1,6 +1,7 @@
 package kr.hs.dgsw.introduce_friends_server.Service;
 
 import kr.hs.dgsw.introduce_friends_server.Domain.Post;
+import kr.hs.dgsw.introduce_friends_server.Protocol.AttachmentProtocol;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ public interface PostService {
     Post createPost(Post post);
     Post modifyPost(Post post, Long id);
     boolean deletePost(Long id);
-
+//    AttachmentProtocol getImage(Long id);
 }

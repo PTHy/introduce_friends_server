@@ -28,6 +28,10 @@ public class Post {
     private String content;
 
     @NotEmpty
+    @Column(name = "user_id",nullable = false)
+    private Long userId;
+
+    @NotEmpty
     @Column(nullable = false)
     @ColumnDefault("0")
     private Long like;

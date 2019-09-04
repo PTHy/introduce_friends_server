@@ -44,6 +44,10 @@ public class User {
     @NotEmpty
     private String phoneNumber;
 
+    private String storedPath;
+
+    private String originName;
+
     public void setPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-512");
