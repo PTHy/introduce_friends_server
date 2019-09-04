@@ -61,10 +61,6 @@ public class UserServiceImpl implements UserService{
                     if(user.getPassword() != null) {
                         fu.setPassword(user.getPassword());
                     }
-                    if(user.getStoredPath() != null)
-                        fu.setStoredPath(user.getStoredPath());
-                    if(user.getOriginName() != null)
-                        fu.setOriginName(user.getOriginName());
                     return this.userRepository.save(fu);
                 })
                 .orElse(null);

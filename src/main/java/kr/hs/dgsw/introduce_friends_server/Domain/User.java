@@ -40,13 +40,9 @@ public class User {
     @NotEmpty
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "phone_number",nullable = false)
     @NotEmpty
     private String phoneNumber;
-
-    private String storedPath;
-
-    private String originName;
 
     public void setPassword(String password) {
         try {
